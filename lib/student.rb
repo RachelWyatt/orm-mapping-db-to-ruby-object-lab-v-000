@@ -38,9 +38,10 @@ class Student
       WHERE grade = "9th"
     SQL
  
-    DB[:conn].execute(sql).map do |row|
+    all_in_9 = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
+    all_in_9
   end
   
   def save
